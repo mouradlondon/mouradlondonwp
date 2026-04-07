@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  background: linear-gradient(180deg, #000000 0%, #5d0000 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent zoom on tap for iOS and other mobile browsers */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+/* Ensure minimum tap target sizes */
+button, a {
+  min-height: 44px;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+p {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+}
