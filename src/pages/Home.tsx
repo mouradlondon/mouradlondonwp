@@ -4,7 +4,7 @@ import { Briefcase, Mail, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="relative md:h-screen min-h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-16 md:overflow-hidden bg-transparent pt-44 pb-12 md:pb-20">
+    <div className="relative md:h-screen min-h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-16 md:overflow-hidden bg-transparent pt-24 md:pt-44 pb-12 md:pb-20">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[120px]" />
@@ -21,14 +21,14 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative flex justify-center items-center order-1 lg:order-1 lg:-mt-12"
+          className="relative flex justify-center items-center order-1 lg:order-1 -mt-8 lg:-mt-12"
         >
           <div className="relative group">
             <div className="absolute -inset-4 bg-white/5 rounded-[20px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <img 
               src="https://i.postimg.cc/Y9NvBTWs/Logo-Clubsider-(2).png" 
               alt="Mourad London WP Logo" 
-              className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[400px] md:h-[400px] lg:w-full lg:max-w-[460px] lg:h-auto lg:max-h-[460px] object-cover rounded-[16px] border-[1.5px] border-white/25 shadow-[0_0_40px_rgba(255,255,255,0.08)] transition-transform duration-500 group-hover:scale-[1.02]"
+              className="relative w-[85%] max-w-[320px] aspect-square sm:w-[280px] sm:h-[280px] md:w-[400px] md:h-[400px] lg:w-full lg:max-w-[460px] lg:h-auto lg:max-h-[460px] object-cover rounded-[16px] border-[1.5px] border-white/25 shadow-[0_0_40px_rgba(255,255,255,0.08)] transition-transform duration-500 group-hover:scale-[1.02]"
               referrerPolicy="no-referrer"
             />
           </div>

@@ -46,14 +46,15 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 md:py-8 transition-all duration-300 ${
+      <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 h-14 md:h-auto flex items-center transition-all duration-300 ${
         isServicesPage && isScrolled 
           ? 'bg-black shadow-lg' 
           : 'bg-gradient-to-b from-black to-transparent'
       }`}>
-        <nav className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold tracking-tighter text-white">
-            Mourad London WP
+        <nav className="max-w-7xl mx-auto w-full flex justify-between items-center">
+          <Link to="/" className="text-base md:text-xl font-bold tracking-tighter text-white">
+            <span className="md:hidden">MLWP</span>
+            <span className="hidden md:inline">Mourad London WP</span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -104,6 +105,7 @@ export default function Header() {
           <>
             {/* Overlay */}
             <motion.div
+              key="sidebar-overlay"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -113,37 +115,39 @@ export default function Header() {
             
             {/* Sidebar */}
             <motion.div
+              key="sidebar-content"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[80%] max-w-sm z-[70] md:hidden shadow-2xl"
+              transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
+              className="fixed top-0 right-0 bottom-0 w-[50vw] z-[70] md:hidden shadow-2xl"
               style={{ background: 'linear-gradient(180deg, #000000 0%, #5d0000 100%)' }}
             >
-              <div className="flex flex-col h-full p-8">
-                <div className="flex justify-end mb-12">
+              <div className="flex flex-col h-full p-6">
+                <div className="flex justify-end mb-8">
                   <button 
                     onClick={() => setIsMenuOpen(false)}
                     className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
                     aria-label="Close menu"
                   >
-                    <X className="w-8 h-8" />
+                    <X className="w-6 h-6" />
                   </button>
                 </div>
 
-                <ul className="flex flex-col gap-8">
+                <ul className="flex flex-col">
                   {navItems.map((item, index) => (
                     <motion.li 
                       key={item.name}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 + index * 0.1 }}
+                      className="border-b border-white/5 last:border-0"
                     >
                       {item.path.startsWith('http') ? (
                         <a 
                           href={item.path}
                           onClick={() => setIsMenuOpen(false)}
-                          className="text-2xl font-semibold text-white hover:text-white/60 transition-colors"
+                          className="block py-[14px] text-base font-semibold text-white hover:text-white/60 transition-colors"
                         >
                           {item.name}
                         </a>
@@ -151,7 +155,7 @@ export default function Header() {
                         <Link 
                           to={item.path}
                           onClick={() => setIsMenuOpen(false)}
-                          className={`text-2xl font-semibold transition-colors ${
+                          className={`block py-[14px] text-base font-semibold transition-colors ${
                             location.pathname === item.path ? 'text-white' : 'text-white/60'
                           }`}
                         >

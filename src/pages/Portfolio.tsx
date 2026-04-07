@@ -172,23 +172,6 @@ export default function Portfolio() {
                       <ChevronRight className="w-5 h-5 group-active:scale-90 transition-transform" />
                     </button>
                   </div>
-
-                  {/* Bullets */}
-                  <div className="flex gap-2 justify-center lg:justify-start w-full">
-                    {PROJECTS.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => {
-                          setDirection(idx > currentIndex ? 1 : -1);
-                          setCurrentIndex(idx);
-                        }}
-                        className={`h-1 transition-all duration-300 rounded-full ${
-                          idx === currentIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/20 hover:bg-white/40'
-                        }`}
-                        aria-label={`Aller au projet ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
                 </div>
               </motion.div>
             </div>
