@@ -6,8 +6,6 @@ import { PROJECTS } from '../constants';
 export default function Portfolio() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -28,52 +26,28 @@ export default function Portfolio() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [nextSlide, prevSlide]);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-    if (isLeftSwipe) nextSlide();
-    if (isRightSwipe) prevSlide();
-  };
-
   const currentProject = PROJECTS[currentIndex];
 
   const variants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 30 : -30,
+      x: direction > 0 ? '100%' : '-100%',
       opacity: 0,
-      filter: "blur(2px)"
     }),
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1,
-      filter: "blur(0px)"
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? 30 : -30,
+      x: direction < 0 ? '100%' : '-100%',
       opacity: 0,
-      filter: "blur(2px)"
     })
   };
 
   return (
     <div 
-      className="relative min-h-screen w-full bg-transparent md:overflow-hidden font-sans text-white select-none pt-24"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      className="relative min-h-screen w-full bg-transparent md:overflow-hidden font-sans text-white select-none pt-24 overflow-x-hidden"
     >
       {/* Background Parallax Effect */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -81,8 +55,8 @@ export default function Portfolio() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative md:h-[calc(100vh-8rem)] min-h-[calc(100vh-8rem)] w-full py-12 md:py-0">
-        <AnimatePresence initial={false} custom={direction} mode="wait">
+      <div className="relative md:h-[calc(100vh-8rem)] min-h-[calc(100vh-8rem)] w-full py-12 md:py-0 overflow-hidden">
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
             key={currentIndex}
             custom={direction}

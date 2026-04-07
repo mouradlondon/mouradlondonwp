@@ -45,7 +45,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 h-14 md:h-auto flex items-center transition-all duration-300 ${
+      <header className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 h-14 md:h-20 flex items-center md:pt-2 transition-all duration-300 ${
         isServicesPage && isScrolled 
           ? 'bg-black shadow-lg' 
           : 'bg-gradient-to-b from-black to-transparent'
