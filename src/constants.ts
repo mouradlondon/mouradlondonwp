@@ -1,3 +1,5 @@
+import { Layout, ShoppingCart, Target, Server, Search } from 'lucide-react';
+
 export interface Project {
   id: number;
   title: string;
@@ -62,5 +64,33 @@ export const PROJECTS: Project[] = [
     url: "https://mobitaxi.fr/",
     description: "Solution de transport taxi simplifiée, garantissant confort et ponctualité pour tous vos déplacements urbains.",
     image: "https://i.postimg.cc/mgFkScJ0/Mobi-Taxi.png"
+  }
+];
+
+export const SERVICES = [
+  {
+    title: "Création / Refonte\nsite vitrine Wordpress",
+    description: "Je crée ou refais des sites vitrines modernes, rapides et adaptés à tous les écrans. L'objectif est de proposer un site propre, clair et prêt à être livré à vos clients, tout en respectant vos standards et vos délais.",
+    icon: Layout,
+  },
+  {
+    title: "Création / Refonte\nboutique WooCommerce",
+    description: "Je prends en charge la création ou la refonte de boutiques WooCommerce, avec une structure optimisée, un parcours client fluide et une mise en place propre des produits, paiements et livraisons.",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Création / Refonte\nLanding Page Wordpress",
+    description: "Je réalise des landing pages efficaces, pensées pour convertir et s'intégrer parfaitement dans vos projets clients. Design clair, structure optimisée et mise en ligne rapide.",
+    icon: Target,
+  },
+  {
+    title: "Migration de site et serveur\nWordpress",
+    description: "Je gère la migration complète de sites WordPress (Wix vers WordPress, changement d'hébergement, etc.) sans perte de contenu ni problème technique, pour une transition fluide et sécurisée.",
+    icon: Server,
+  },
+  {
+    title: "Référencement SEO\noptimisation de base",
+    description: "Je mets en place les bases du SEO sur vos sites WordPress : structure des pages, balises, performance et optimisation globale pour permettre un bon référencement dès la mise en ligne.",
+    icon: Search,
   }
 ];
