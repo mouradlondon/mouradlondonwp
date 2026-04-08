@@ -40,15 +40,11 @@ export default function Home() {
   const currentProject = PROJECTS[currentIndex];
 
   return (
-    <div className="text-white selection:bg-white selection:text-black min-h-screen" style={{ background: 'linear-gradient(180deg, #000000 0%, #5d0000 100%)', backgroundAttachment: 'fixed' }}>
+    <div className="text-white selection:bg-white selection:text-black min-h-screen overflow-x-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #4a0000 50%, #000000 100%)', backgroundAttachment: 'fixed' }}>
       {/* 1. HERO SECTION */}
-      <section className="relative w-full flex items-center justify-center px-6 md:px-12 lg:px-16 bg-transparent pt-32 pb-24">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[120px]" />
-        </div>
+      <section className="relative w-full flex items-center justify-center px-6 md:px-12 lg:px-16 pt-16 md:pt-32 pb-12 md:pb-24 overflow-hidden bg-transparent">
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-10 items-center max-w-7xl w-full relative z-10">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-10 items-center max-w-7xl w-full relative z-10">
           {/* Left Column: Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -58,7 +54,6 @@ export default function Home() {
             className="relative flex justify-center items-center order-1 lg:order-1"
           >
             <div className="relative group">
-              <div className="absolute -inset-4 bg-white/5 rounded-[20px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src="https://i.postimg.cc/Y9NvBTWs/Logo-Clubsider-(2).png" 
                 alt="Mourad London WP Logo" 
@@ -143,11 +138,7 @@ export default function Home() {
       </section>
 
       {/* 2. PORTFOLIO SECTION */}
-      <section id="portfolio" className="relative w-full bg-transparent py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
-        </div>
+      <section id="portfolio" className="relative w-full py-12 md:py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-transparent">
 
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -226,11 +217,7 @@ export default function Home() {
       </section>
 
       {/* 3. SERVICES SECTION */}
-      <section id="services" className="relative w-full bg-transparent py-24 px-6 md:px-12 lg:px-24">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white rounded-full blur-[120px]" />
-        </div>
+      <section id="services" className="relative w-full py-12 md:py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-transparent">
 
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -257,11 +244,7 @@ export default function Home() {
       </section>
 
       {/* 4. CONTACT SECTION */}
-      <section id="contact" className="relative w-full py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[120px]" />
-        </div>
+      <section id="contact" className="relative w-full py-12 md:py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-transparent">
 
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto relative z-10">
           {/* Left Column: Image */}
@@ -273,7 +256,6 @@ export default function Home() {
             className="relative flex justify-center items-center order-1"
           >
             <div className="relative group">
-              <div className="absolute -inset-4 bg-white/10 rounded-[20px] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src="https://i.postimg.cc/Y9NvBTWs/Logo-Clubsider-(2).png" 
                 alt="Mourad London WP Logo" 
